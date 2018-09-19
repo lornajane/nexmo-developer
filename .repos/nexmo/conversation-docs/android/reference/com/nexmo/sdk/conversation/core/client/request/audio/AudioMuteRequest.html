@@ -163,8 +163,6 @@
     <li class="api apilevel-">
   <a href="../../../../../../../../com/nexmo/sdk/conversation/core/networking/package-summary.html">com.nexmo.sdk.conversation.core.networking</a></li>
     <li class="api apilevel-">
-  <a href="../../../../../../../../com/nexmo/sdk/conversation/core/util/package-summary.html">com.nexmo.sdk.conversation.core.util</a></li>
-    <li class="api apilevel-">
   <a href="../../../../../../../../com/nexmo/sdk/conversation/device/package-summary.html">com.nexmo.sdk.conversation.device</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../../com/nexmo/sdk/conversation/push/package-summary.html">com.nexmo.sdk.conversation.push</a></li>
@@ -180,7 +178,6 @@
           <li class="api apilevel-"><a href="../../../../../../../../com/nexmo/sdk/conversation/core/client/request/audio/AudioEarmuffRequest.html">AudioEarmuffRequest</a></li>
           <li class="selected api apilevel-"><a href="../../../../../../../../com/nexmo/sdk/conversation/core/client/request/audio/AudioMuteRequest.html">AudioMuteRequest</a></li>
           <li class="api apilevel-"><a href="../../../../../../../../com/nexmo/sdk/conversation/core/client/request/audio/AudioRingingRequest.html">AudioRingingRequest</a></li>
-          <li class="api apilevel-"><a href="../../../../../../../../com/nexmo/sdk/conversation/core/client/request/audio/KnockingDeleteRequest.html">KnockingDeleteRequest</a></li>
           <li class="api apilevel-"><a href="../../../../../../../../com/nexmo/sdk/conversation/core/client/request/audio/KnockingNewRequest.html">KnockingNewRequest</a></li>
           <li class="api apilevel-"><a href="../../../../../../../../com/nexmo/sdk/conversation/core/client/request/audio/RtcNewRequest.html">RtcNewRequest</a></li>
           <li class="api apilevel-"><a href="../../../../../../../../com/nexmo/sdk/conversation/core/client/request/audio/RtcNewRequest.RtcNewResponse.html">RtcNewRequest.RtcNewResponse</a></li>
@@ -396,28 +393,6 @@
       </tr>
       
     
-      <tr class="alt-color api apilevel-" >
-          <td class="jd-typecol">
-          public
-          
-          
-          String</td>
-          <td class="jd-linkcol"><a href="../../../../../../../../com/nexmo/sdk/conversation/core/client/request/audio/AudioMuteRequest.html#rtcId">rtcId</a></td>
-          <td class="jd-descrcol" width="100%"></td>
-      </tr>
-      
-    
-      <tr class=" api apilevel-" >
-          <td class="jd-typecol">
-          public
-          
-          
-          String</td>
-          <td class="jd-linkcol"><a href="../../../../../../../../com/nexmo/sdk/conversation/core/client/request/audio/AudioMuteRequest.html#senderId">senderId</a></td>
-          <td class="jd-descrcol" width="100%"></td>
-      </tr>
-      
-    
 
 </table>
 
@@ -443,7 +418,7 @@
             
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../../../../com/nexmo/sdk/conversation/core/client/request/audio/AudioMuteRequest.html#AudioMuteRequest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, boolean, com.nexmo.sdk.conversation.client.event.RequestHandler<java.lang.String>)">AudioMuteRequest</a></span>(String cid, String memberId, String senderId, String rtcId, boolean muted, <a href="../../../../../../../../com/nexmo/sdk/conversation/client/event/RequestHandler.html">RequestHandler</a>&lt;String&gt; listener)
+        <span class="sympad"><a href="../../../../../../../../com/nexmo/sdk/conversation/core/client/request/audio/AudioMuteRequest.html#AudioMuteRequest(java.lang.String, java.lang.String, boolean, com.nexmo.sdk.conversation.client.event.RequestHandler<java.lang.String>)">AudioMuteRequest</a></span>(String cid, String memberId, boolean muted, <a href="../../../../../../../../com/nexmo/sdk/conversation/client/event/RequestHandler.html">RequestHandler</a>&lt;String&gt; listener)
         
   </td></tr>
 
@@ -799,66 +774,6 @@
 
 
 
-<a id="rtcId"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-        String
-      </span>
-        rtcId
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-    </div>
-</div>
-
-
-
-<a id="senderId"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-        String
-      </span>
-        senderId
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-    </div>
-</div>
-
-
-
 
 <!-- Public ctors -->
 
@@ -868,7 +783,7 @@
 
 
 
-<a id="AudioMuteRequest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, boolean, com.nexmo.sdk.conversation.client.event.RequestHandler<java.lang.String>)"></a>
+<a id="AudioMuteRequest(java.lang.String, java.lang.String, boolean, com.nexmo.sdk.conversation.client.event.RequestHandler<java.lang.String>)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -881,7 +796,7 @@
         
       </span>
       <span class="sympad">AudioMuteRequest</span>
-      <span class="normal">(String cid, String memberId, String senderId, String rtcId, boolean muted, <a href="../../../../../../../../com/nexmo/sdk/conversation/client/event/RequestHandler.html">RequestHandler</a>&lt;String&gt; listener)</span>
+      <span class="normal">(String cid, String memberId, boolean muted, <a href="../../../../../../../../com/nexmo/sdk/conversation/client/event/RequestHandler.html">RequestHandler</a>&lt;String&gt; listener)</span>
     </h4>
       <div class="api-level">
         <div>

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :feedbacks
   end
 
-  namespace :admin_api, defaults: { format: 'json' } do
+  namespace :admin_api, defaults: {format: 'json'} do
     resources :feedback, only: [:index]
   end
 
@@ -15,14 +15,13 @@ Rails.application.routes.draw do
 
   get 'markdown/show'
 
-  match '/markdown', to: 'markdown#preview', via: %i[get post]
+  match '/markdown', to: 'markdown#preview', via: [:get, :post]
 
   get '/signout', to: 'sessions#destroy'
 
   post '/jobs/code_example_push', to: 'jobs#code_example_push'
   post '/jobs/open_pull_request', to: 'jobs#open_pull_request'
 
-  get '/coverage', to: 'dashboard#coverage'
   get '/stats', to: 'dashboard#stats'
 
   get '/tutorials', to: 'tutorials#index'
@@ -30,8 +29,6 @@ Rails.application.routes.draw do
   get '/*product/tutorials', to: 'tutorials#index', constraints: DocumentationConstraint.product_with_parent
 
   get '/documentation', to: 'static#documentation'
-
-  get '/hansel', to: 'static#podcast'
 
   get '/legacy', to: 'static#legacy'
   get '/team', to: 'static#team'
@@ -49,7 +46,7 @@ Rails.application.routes.draw do
   get '/changelog', to: 'changelog#index'
   get '/changelog/:version', to: 'changelog#show', constraints: { version: /\d\.\d\.\d/ }
 
-  match '/search', to: 'search#results', via: %i[get post]
+  match '/search', to: 'search#results', via: [:get, :post]
 
   get '/api-errors', to: 'api_errors#index'
   get '/api-errors/generic/:id', to: 'api_errors#show'
@@ -61,9 +58,9 @@ Rails.application.routes.draw do
   get '/api/*definition(/:code_language)', to: 'open_api#show', as: 'open_api', constraints: OpenApiConstraint.products
   get '/api/*document(/:code_language)', to: 'api#show', constraints: DocumentationConstraint.code_language
 
-  get '/*product/api-reference', to: 'markdown#api'
+  get '/*product/(api|ncco)-reference', to: 'markdown#api'
 
-  scope '(:namespace)', namespace: /contribute/, defaults: { namespace: '' } do
+  scope "(:namespace)", namespace: /contribute/, defaults: { namespace: '' } do
     get '/*document(/:code_language)', to: 'markdown#show', constraints: DocumentationConstraint.documentation
   end
 

@@ -9,7 +9,6 @@ com.nexmo.sdk.conversation.core
 com.nexmo.sdk.conversation.core.client.request
 com.nexmo.sdk.conversation.core.client.request.audio
 com.nexmo.sdk.conversation.core.networking
-com.nexmo.sdk.conversation.core.util
 com.nexmo.sdk.conversation.device
 com.nexmo.sdk.conversation.push
 

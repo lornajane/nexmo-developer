@@ -1,6 +1,5 @@
 ---
 title: OAuth
-navigation_weight: 3
 ---
 
 # OAuth

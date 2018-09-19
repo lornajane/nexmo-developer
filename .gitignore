@@ -12,7 +12,6 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-.idea/
 
 # Ignore Byebug command history file.
 .byebug_history
@@ -22,7 +21,3 @@
 /node_modules
 /public/packs-test
 config/algolia.yml
-
-.vscode/*
-coverage
-

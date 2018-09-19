@@ -1,9 +1,13 @@
-import requests
+import urllib
+import urllib2
+import json
 
-application_id = 'APPLICATION_ID'
-url = 'https://api.nexmo.com/v1/applications/' + application_id
+base_url = 'https://api.nexmo.com'
+version = '/v1'
+action = '/applications '
+app_id = '/APPLICATION_ID?'
 
-data = {
+params = {
         'api_key': 'API_KEY',
         'api_secret': 'API_SECRET',
         'name' : 'MyFirstApplication',
@@ -12,16 +16,23 @@ data = {
         'event_url' : 'https://example.com/call_status'
 }
 
-resp = requests.put(url, params=data)
+url =  base_url + version + action + app_id + urllib.urlencode(params)
+request = urllib2.Request(url)
+request.add_header('Accept', 'application/json')
+request.get_method = lambda: 'PUT'
+
 try:
-    if resp.status_code == 200:
-        application = resp.json()
+    response = urllib2.urlopen(request)
+    data = response.read()
+    if response.code == 200:
+        application = json.loads(data.decode('utf-8'))
         print "Application " + application['name'] + " has an ID of:" + application['id']
-        for webhook in application['voice']['webhooks']:
+        for webhook in application['voice']['webhooks'] :
                 print "  " + webhook['endpoint_type'] + " is " + webhook['endpoint']
     else:
+        error = json.loads(data.decode('utf-8'))
         print "Your request failed because:"
-        print resp.json()
+        print error
 
-except requests.exceptions.HTTPError as e:
+except urllib2.HTTPError as e:
     print e

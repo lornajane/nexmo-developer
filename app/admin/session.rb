@@ -21,7 +21,7 @@ ActiveAdmin.register Session do
     actions
   end
 
-  form do |_f|
+  form do |f|
     inputs 'Details' do
       input :title
       input :description

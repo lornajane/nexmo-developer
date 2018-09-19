@@ -20,23 +20,25 @@ class CodeLanguageResolver
   end
 
   def self.find(key)
-    raise 'Key is missing' unless key
-    code_language = all.detect { |lang| lang.key == key }
+    raise "Key is missing" unless key
+    code_language = all.detect { |code_language| code_language.key == key }
     raise "Language #{key} does not exist." unless code_language
     code_language
   end
 
   def self.linkable
-    all.select(&:linkable?)
+    all.select { |code_language| code_language.linkable? }
   end
 
-  private_class_method def self.where_type(type)
+  private
+
+  def self.where_type(type)
     language_configuration[type].map do |key, config|
       CodeLanguage.new(config.merge({ key: key, type: type }))
     end
   end
 
-  private_class_method def self.language_configuration
+  def self.language_configuration
     @language_configuration ||= YAML.load_file("#{Rails.root}/config/code_languages.yml")
   end
 end

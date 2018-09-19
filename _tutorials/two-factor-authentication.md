@@ -2,8 +2,6 @@
 title: Two-factor authentication for security and spam prevention
 products: verify
 description: Increase your application security
-languages:
-    - Ruby
 ---
 
 # Two-factor authentication for security and spam prevention

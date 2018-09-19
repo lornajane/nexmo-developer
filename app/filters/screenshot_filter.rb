@@ -4,14 +4,16 @@ class ScreenshotFilter < Banzai::Filter
       config = YAML.safe_load($1)
 
       if config['image']
-        "![Screenshot](#{config['image'].gsub('public', '')})"
+        s = "![Screenshot](#{config['image'].gsub('public', '')})"
       else
-        <<~HEREDOC
-          ## Missing image
-          To fix this run:
-          ```
-          $ rake screenshots:update
-          ```
+        s = <<~HEREDOC
+        ## Missing image
+
+        To fix this run:
+
+        ```
+        $ rake screenshots:update
+        ```
         HEREDOC
       end
     end

@@ -6,7 +6,7 @@ require 'thin'
 
 Dotenv.load
 
-NEXMO_NUMBER = ENV['NEXMO_NUMBER']
+FROM_NUMBER = ENV['FROM_NUMBER']
 
 # See https://docs.nexmo.com/voice/voice-api/websockets for more instructions
 
@@ -52,7 +52,7 @@ get '/ncco' do
       'eventUrl' => [
         "#{base_url}/event"
       ],
-      'from' => NEXMO_NUMBER,
+      'from' => FROM_NUMBER,
       'endpoint' => [
         {
           'type' => 'websocket',

@@ -15,14 +15,14 @@ class SearchController < ApplicationController
     redirect_to root_path unless params['query']
   end
 
-  def get_results # rubocop:disable Naming/AccessorMethodName
+  def get_results
     return unless params['query']
 
     parameters = ALGOLIA_CONFIG.keys.map do |index|
       {
         index_name: index,
         query: params['query'],
-        hitsPerPage: 20,
+        hitsPerPage: 20
       }
     end
 

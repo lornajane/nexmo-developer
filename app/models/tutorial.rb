@@ -1,6 +1,6 @@
 class Tutorial
   include ActiveModel::Model
-  attr_accessor :title, :description, :products, :document_path, :languages
+  attr_accessor :title, :description, :products, :document_path
 
   def body
     File.read(document_path)
@@ -18,6 +18,8 @@ class Tutorial
     normalized_products.sort.to_sentence
   end
 
+  private
+
   def normalise_product_title(product)
     return 'SMS' if product == 'messaging/sms'
     return 'Voice' if product == 'voice/voice-api'
@@ -31,10 +33,6 @@ class Tutorial
     end
   end
 
-  def self.origin
-    Pathname.new("#{Rails.root}/_tutorials")
-  end
-
   def self.all
     files.map do |document_path|
       document_path = Pathname.new(document_path)
@@ -45,7 +43,6 @@ class Tutorial
         title: frontmatter['title'],
         description: frontmatter['description'],
         products: frontmatter['products'].split(',').map(&:strip),
-        languages: frontmatter['languages'] || [],
         document_path: document_path,
       })
     end
@@ -53,7 +50,11 @@ class Tutorial
 
   private
 
-  private_class_method def self.files
+  def self.files
     Dir.glob("#{origin}/**/*.md")
+  end
+
+  def self.origin
+    Pathname.new("#{Rails.root}/_tutorials")
   end
 end

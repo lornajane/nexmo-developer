@@ -2,8 +2,6 @@
 title: Private voice communication
 products: voice/voice-api
 description: Protect user's number privacy by connecting users together for private voice communication.
-languages:
-    - Node
 ---
 
 # Private voice communication

@@ -21,61 +21,70 @@
  */
 package com.nexmo.quickstart.voice;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nexmo.client.voice.ncco.InputNcco;
 import com.nexmo.client.voice.ncco.Ncco;
 import com.nexmo.client.voice.ncco.TalkNcco;
-import spark.Spark;
+import spark.Request;
+import spark.Route;
 
 import java.io.IOException;
 
+import static spark.Spark.*;
+
 public class DtmfInput {
-    public static void main(String[] args) {
-        Spark.port(3000);
+    public static void main(String[] args) throws Exception {
+        ObjectMapper nccoMapper = new ObjectMapper();
 
         /*
-         * Route to answer incoming calls.
+         * Route to answer incoming calls with an NCCO response.
          */
-        Spark.get("/webhooks/answer", (req, res) -> {
-            TalkNcco intro = new TalkNcco("Hello. Please press any key to continue.");
+        Route answerRoute = (req, res) -> {
+            String dtmfUrl = String.format("%s://%s/webhooks/dtmf", req.scheme(), req.host());
 
+            TalkNcco intro = new TalkNcco("Please enter a digit");
             InputNcco input = new InputNcco();
-            input.setEventUrl(String.format("%s://%s/webhooks/dtmf", req.scheme(), req.host()));
-            input.setMaxDigits(1);
-
-            Ncco[] nccos = new Ncco[]{intro, input};
+            input.setEventUrl(dtmfUrl);
+            Ncco[] nccos = new Ncco[]{intro, input,};
 
             res.type("application/json");
-            return new ObjectMapper().writer().writeValueAsString(nccos);
-        });
+            return nccoMapper.writer().writeValueAsString(nccos);
+        };
 
         /*
-         * Route which returns NCCO saying which DTMF code was received.
+         * Webhook Route which returns NCCO saying which DTMF code was received.
          */
-        Spark.post("/webhooks/dtmf", (req, res) -> {
-            DtmfPayload dtmfPayload = DtmfPayload.fromJson(req.body());
-
-            TalkNcco response = new TalkNcco(String.format("You pressed %s, Goodbye.", dtmfPayload.getDtmf()));
-            Ncco[] nccos = new Ncco[]{response};
+        Route dtmfWebhookRoute = (req, res) -> {
+            TalkNcco intro = new TalkNcco(String.format("You pressed %s", extractDtmf(req)));
+            Ncco[] nccos = new Ncco[]{intro};
 
             res.type("application/json");
-            return new ObjectMapper().writer().writeValueAsString(nccos);
-        });
+            return nccoMapper.writer().writeValueAsString(nccos);
+        };
+
+        port(3000);
+
+        get("/webhooks/answer", answerRoute);
+        post("/webhooks/answer", answerRoute);
+
+        get("/webhooks/dtmf", dtmfWebhookRoute);
+        post("/webhooks/dtmf", dtmfWebhookRoute);
     }
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class DtmfPayload {
-        private String dtmf;
-
-        @JsonProperty("dtmf")
-        String getDtmf() {
-            return this.dtmf;
-        }
-
-        public static DtmfPayload fromJson(String json) throws IOException {
-            return new ObjectMapper().readValue(json, DtmfPayload.class);
+    /**
+     * Extract the provided dtmf either from the request params, or JSON body.
+     */
+    private static String extractDtmf(Request req) throws IOException {
+        String dtmf = req.queryParams("dtmf");
+        if ("GET".equals(req.requestMethod())) {
+            return dtmf;
+        } else {
+            if (dtmf != null) {
+                return dtmf;
+            } else {
+                DtmfPayload payload = DtmfPayload.fromJson(req.bodyAsBytes());
+                return payload.getDtmf();
+            }
         }
     }
 }

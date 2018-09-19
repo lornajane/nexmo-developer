@@ -2,7 +2,7 @@
   <thead>
     <th>Error ID</th>
     <th>Information</th>
-    <th class="small-2">Actions</th>
+    <th>Actions</th>
   </thead>
   <tbody>
     <% errors.each do |error| %>
@@ -13,7 +13,7 @@
           <p><%= error.description %></p>
 
           <b>Resolution:</b>
-          <%= error.resolution.render_markdown %>
+          <p><%= error.resolution %></p>
         </td>
         <td>
         <% if error.link %>

@@ -23,11 +23,11 @@ https://api.nexmo.com/conversions/voice?api_key=xxxxxx&api_secret=xxxxxxx&messag
 
 This request contains:
 
-* A [Base URL](#base-url)
+* A [Base URL](#base)
 * [Parameters](#parameters )
-* [Authentication information](#authentication-information )
+* [Authentication information](#authentic )
 * [Security](#security )
-* [Encoding](#encoding)
+* [Encoding](#encode)
 
 ## Base URL
 
@@ -55,7 +55,7 @@ Parameter | Description | Required
 -- | -- | --
 `message-id` | The ID you receive in the response to a request. @[Possible Values](/_modals/api/conversion/parameters/message-id.md) | Yes
 `delivered` | Set to *true* if your user replied to the message you sent. Otherwise, set to *false*. <br>**Note**: for curl, use 0 and 1.  | Yes
-`timestamp` | When the user completed your call-to-action (e.g. visited your website, installed your app) in [UTC±00:00](https://en.wikipedia.org/wiki/UTC%C2%B100:00) format: *yyyy-MM-dd HH:mm:ss*. | Yes
+`timestamp` | When the user completed your call-to-action (e.g. visited your website, installed your app) in [UTC±00:00](https://en.wikipedia.org/wiki/UTC%C2%B100:00) format: *yyyy-MM-dd HH:mm:ss*. <br/>If you do not set this parameter, Nexmo uses the time it receives this request. | Yes
 
 #### Authentication information
 
@@ -103,5 +103,4 @@ Key |	Value
 -- | --
 `200` |	OK |
 `401` |	Wrong credentials
-`402` | Conversion has not been enabled for your account |
-`420` or `423` |	Invalid parameters |
+`420` |	Invalid parameters

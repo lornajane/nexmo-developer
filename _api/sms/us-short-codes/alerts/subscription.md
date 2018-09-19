@@ -101,7 +101,7 @@ You submit all requests with a [POST] or [GET] call using UTF-8 encoding and URL
 
 Each [request](#request) you make using this API returns a:
 
-* [Response](#keys-and-values) - the status of your request to Nexmo in [JSON or XML format](#format).
+* [Response](#keys) - the status of your request to Nexmo in [JSON or XML](#base) format.
 
 The response is returned either:
 
@@ -111,7 +111,7 @@ The response is returned either:
 Each response comes:
 
 * In a specific [Format](#format)
-* With [Keys and values](#keys-and-values)
+* With [Keys and values](#keys)
 
 
 ### Format
@@ -126,7 +126,8 @@ source: '_examples/api/us-short-codes/alerts/subscription/response-format/1'
 source: '_examples/api/us-short-codes/alerts/subscription/response-format/2'
 ```
 
-### Keys and Values
+
+###Keys and Values
 
 The response contains the following keys and values:
 

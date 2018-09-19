@@ -51,8 +51,10 @@ class Repo
   private
 
   def extract_namespace_from_url
-    @url.match(%r{^(?:(?:git|https)://|git@).+?(?:/|:)(.+?).git})[1]
-  rescue NoMethodError
-    raise "Could not understand URL #{@url}"
+    begin
+      @url.match(/^(?:(?:git|https):\/\/|git@).+?(?:\/|:)(.+?).git/)[1]
+    rescue NoMethodError
+      raise "Could not understand URL #{@url}"
+    end
   end
 end

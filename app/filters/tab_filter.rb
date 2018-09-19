@@ -47,11 +47,11 @@ class TabFilter < Banzai::Filter
     @tabs_content.add_child(element)
   end
 
-  def tabbed_code_examples?
+  def is_tabbed_code_examples?
     @mode == 'examples'
   end
 
-  def tabbed_content?
+  def is_tabbed_content?
     @mode == 'content'
   end
 
@@ -69,7 +69,7 @@ class TabFilter < Banzai::Filter
     @tabs = @document.at_css('.tabs')
     @tabs_content = @document.at_css('.tabs-content')
 
-    if tabbed_code_examples?
+    if is_tabbed_code_examples?
       @tabs['class'] += ' tabs--code'
       @tabs_content['class'] += ' tabs-content--code'
     end
@@ -100,7 +100,7 @@ class TabFilter < Banzai::Filter
 
     list = resolve_language(list)
 
-    if tabbed_code_examples?
+    if is_tabbed_code_examples?
       list = format_code(list)
       list = resolve_code(list)
       list = resolve_tab_title(list)
@@ -119,23 +119,23 @@ class TabFilter < Banzai::Filter
 
   def content_from_source
     source_path = "#{Rails.root}/#{@config['source']}"
-    source_path += '/*' if tabbed_code_examples?
-    source_path += '/*.md' if tabbed_content?
+    source_path += '/*' if is_tabbed_code_examples?
+    source_path += '/*.md' if is_tabbed_content?
 
     Dir[source_path].map do |content_path|
       source = File.read(content_path)
 
       content = {
-        id: SecureRandom.hex,
-        source: source,
+        :id => SecureRandom.hex,
+        :source => source,
       }
 
-      if tabbed_code_examples?
-        language_key = File.basename(content_path, '.*').downcase
+      if is_tabbed_code_examples?
+        language_key = File.basename(content_path, ".*").downcase
         content[:language_key] = language_key
       end
 
-      if tabbed_content?
+      if is_tabbed_content?
         content[:frontmatter] = YAML.safe_load(source)
         content[:language_key] = content[:frontmatter]['language']
         content[:platform_key] = content[:frontmatter]['platform']
@@ -152,9 +152,9 @@ class TabFilter < Banzai::Filter
       source = File.read(config['source'])
 
       config.symbolize_keys.merge({
-        id: SecureRandom.hex,
-        source: source,
-        language_key: title.dup.downcase,
+        :id => SecureRandom.hex,
+        :source => source,
+        :language_key => title.dup.downcase
       })
     end
   end
@@ -168,13 +168,13 @@ class TabFilter < Banzai::Filter
       raise "Example missing (#{@config['config']}) in code_examples.yml. Try restarting the server or check for presence of key."
     end
 
-    config.map do |title, c|
-      source = File.read(c['source'])
+    config.map do |title, config|
+      source = File.read(config['source'])
 
-      c.symbolize_keys.merge({
-        id: SecureRandom.hex,
-        source: source,
-        language_key: title.dup.downcase,
+      config.symbolize_keys.merge({
+        :id => SecureRandom.hex,
+        :source => source,
+        :language_key => title.dup.downcase
       })
     end
   end
@@ -182,11 +182,15 @@ class TabFilter < Banzai::Filter
   def resolve_language(contents)
     contents.map do |content|
       if content[:language_key]
-        content[:language] = CodeLanguageResolver.find(content[:language_key])
+        content.merge!({
+          :language => CodeLanguageResolver.find(content[:language_key]),
+        })
       end
 
       if content[:platform_key]
-        content[:platform] = CodeLanguageResolver.find(content[:platform_key])
+        content.merge!({
+          :platform => CodeLanguageResolver.find(content[:platform_key]),
+        })
       end
 
       content
@@ -216,13 +220,13 @@ class TabFilter < Banzai::Filter
         <pre class="highlight #{content[:language_key]}"><code>#{highlighted_source}</code></pre>
       HEREDOC
 
-      content.merge!({ body: body })
+      content.merge!({ :body => body })
     end
   end
 
   def resolve_tab_title(contents)
     contents.map do |content|
-      content.merge!({ tab_title: content[:language].label })
+      content.merge!({ :tab_title => content[:language].label })
     end
   end
 
@@ -239,7 +243,7 @@ class TabFilter < Banzai::Filter
 
     if options[:code_language]
       contents.each_with_index do |content, index|
-        %i[language_key platform_key].each do |key|
+        %i{language_key platform_key}.each do |key|
           active_index = index if content[key] == options[:code_language].key
         end
       end

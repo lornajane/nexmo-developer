@@ -22,14 +22,12 @@
 package com.nexmo.quickstart.sms;
 
 import com.nexmo.client.NexmoClient;
-import com.nexmo.client.SmsClient;
 import com.nexmo.client.auth.AuthMethod;
 import com.nexmo.client.auth.TokenAuthMethod;
 import com.nexmo.client.sms.SmsSubmissionResult;
 import com.nexmo.client.sms.messages.TextMessage;
 
-import static com.nexmo.quickstart.Util.configureLogging;
-import static com.nexmo.quickstart.Util.envVar;
+import static com.nexmo.quickstart.Util.*;
 
 public class SendMessage {
 
@@ -41,16 +39,12 @@ public class SendMessage {
         String TO_NUMBER = envVar("TO_NUMBER");
 
         AuthMethod auth = new TokenAuthMethod(NEXMO_API_KEY, NEXMO_API_SECRET);
-        SmsClient client = new NexmoClient(auth).getSmsClient();
+        NexmoClient client = new NexmoClient(auth);
 
-        TextMessage exampleMessage = new TextMessage(
-            "Acme Inc",
-            TO_NUMBER,
-            "A text message sent using the Nexmo SMS API"
-        );
-
-        SmsSubmissionResult[] responses = client.submitMessage(exampleMessage);
-
+        SmsSubmissionResult[] responses = client.getSmsClient().submitMessage(new TextMessage(
+                "Acme Inc",
+                TO_NUMBER,
+                "A text message sent using the Nexmo SMS API"));
         for (SmsSubmissionResult response : responses) {
             System.out.println(response);
         }

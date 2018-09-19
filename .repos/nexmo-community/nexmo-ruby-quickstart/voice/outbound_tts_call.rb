@@ -7,7 +7,7 @@ NEXMO_API_SECRET = ENV['NEXMO_API_SECRET']
 NEXMO_APPLICATION_ID = ENV['NEXMO_APPLICATION_ID']
 NEXMO_APPLICATION_PRIVATE_KEY_PATH = ENV['NEXMO_APPLICATION_PRIVATE_KEY_PATH']
 NEXMO_NUMBER = ENV['NEXMO_NUMBER']
-RECIPIENT_NUMBER = ENV['RECIPIENT_NUMBER']
+TO_NUMBER = ENV['TO_NUMBER']
 
 require 'nexmo'
 
@@ -18,10 +18,10 @@ client = Nexmo::Client.new(
   private_key: File.read(NEXMO_APPLICATION_PRIVATE_KEY_PATH)
 )
 
-response = client.calls.create(
+client.calls.create(
   to: [{
     type: 'phone',
-    number: RECIPIENT_NUMBER
+    number: TO_NUMBER
   }],
   from: {
     type: 'phone',
@@ -31,5 +31,3 @@ response = client.calls.create(
     'https://developer.nexmo.com/ncco/tts.json'
   ]
 )
-
-puts response.inspect

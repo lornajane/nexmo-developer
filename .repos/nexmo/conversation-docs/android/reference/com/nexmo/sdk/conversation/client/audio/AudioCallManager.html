@@ -163,8 +163,6 @@
     <li class="api apilevel-">
   <a href="../../../../../../com/nexmo/sdk/conversation/core/networking/package-summary.html">com.nexmo.sdk.conversation.core.networking</a></li>
     <li class="api apilevel-">
-  <a href="../../../../../../com/nexmo/sdk/conversation/core/util/package-summary.html">com.nexmo.sdk.conversation.core.util</a></li>
-    <li class="api apilevel-">
   <a href="../../../../../../com/nexmo/sdk/conversation/device/package-summary.html">com.nexmo.sdk.conversation.device</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../com/nexmo/sdk/conversation/push/package-summary.html">com.nexmo.sdk.conversation.push</a></li>
@@ -179,7 +177,6 @@
           <li class="api apilevel-"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AppRTCAudioManager.AudioManagerEvents.html">AppRTCAudioManager.AudioManagerEvents</a></li>
           <li class="api apilevel-"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AppRTCClient.html">AppRTCClient</a></li>
           <li class="api apilevel-"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallEventListener.html">AudioCallEventListener</a></li>
-          <li class="api apilevel-"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallStatsListener.html">AudioCallStatsListener</a></li>
           <li class="api apilevel-"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/PeerConnectionClient.PeerConnectionEvents.html">PeerConnectionClient.PeerConnectionEvents</a></li>
           <li class="api apilevel-"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/RtcEvents.html">RtcEvents</a></li>
       </ul>
@@ -193,11 +190,9 @@
           <li class="api apilevel-"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AppRTCProximitySensor.html">AppRTCProximitySensor</a></li>
           <li class="api apilevel-"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AppRTCUtils.html">AppRTCUtils</a></li>
           <li class="selected api apilevel-"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallManager.html">AudioCallManager</a></li>
-          <li class="api apilevel-"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/MOSReport.html">MOSReport</a></li>
           <li class="api apilevel-"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/PeerConnectionClient.html">PeerConnectionClient</a></li>
           <li class="api apilevel-"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/PeerConnectionClient.DataChannelParameters.html">PeerConnectionClient.DataChannelParameters</a></li>
           <li class="api apilevel-"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/PeerConnectionClient.PeerConnectionParameters.html">PeerConnectionClient.PeerConnectionParameters</a></li>
-          <li class="api apilevel-"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/StatsReportHelper.html">StatsReportHelper</a></li>
       </ul>
     </li>
               
@@ -284,9 +279,6 @@ Summary:
 
 
 
-
-  &#124; <a href="#lfields">Fields</a>
-  
 
 
 
@@ -450,26 +442,6 @@ Summary:
 
 
 
-<!-- =========== FIELD SUMMARY =========== -->
-<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
-
-
-    
-      <tr class="alt-color api apilevel-" >
-          <td class="jd-typecol">
-          public
-          static
-          final
-          String[]</td>
-          <td class="jd-linkcol"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallManager.html#MANDATORY_PERMISSIONS">MANDATORY_PERMISSIONS</a></td>
-          <td class="jd-descrcol" width="100%"></td>
-      </tr>
-      
-    
-
-</table>
-
-
 
 
 
@@ -538,24 +510,6 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallManager.html#earmuff(com.nexmo.sdk.conversation.client.Member, boolean, com.nexmo.sdk.conversation.client.event.RequestHandler)">earmuff</a></span>(<a href="../../../../../../com/nexmo/sdk/conversation/client/Member.html">Member</a> member, boolean isEarmuff, <a href="../../../../../../com/nexmo/sdk/conversation/client/event/RequestHandler.html">RequestHandler</a> listener)
-        
-        <div class="jd-descrdiv">Earmuff any member in the current audio call.</div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol">
-            
-            
-            
-            
-            
-            void
-        </td>
-        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallManager.html#earmuff(boolean, com.nexmo.sdk.conversation.client.event.RequestHandler)">earmuff</a></span>(boolean isEarmuff, <a href="../../../../../../com/nexmo/sdk/conversation/client/event/RequestHandler.html">RequestHandler</a> listener)
         
         <div class="jd-descrdiv">Earmuff self in the current audio call.</div>
@@ -564,7 +518,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -577,24 +531,6 @@ Summary:
         <span class="sympad"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallManager.html#enable(com.nexmo.sdk.conversation.client.audio.AudioCallEventListener)">enable</a></span>(<a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallEventListener.html">AudioCallEventListener</a> listener)
         
         <div class="jd-descrdiv">Enable Audio calls in the current conversation.</div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol">
-            
-            
-            
-            
-            
-            void
-        </td>
-        <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallManager.html#enableCallStats(int, com.nexmo.sdk.conversation.client.audio.AudioCallStatsListener)">enableCallStats</a></span>(int statCallbackInterval, <a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallStatsListener.html">AudioCallStatsListener</a> listener)
-        
-        <div class="jd-descrdiv">Enable sending call stats to the calling application.</div>
   
   </td></tr>
 
@@ -660,31 +596,13 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallManager.html#mute(com.nexmo.sdk.conversation.client.Member, boolean, com.nexmo.sdk.conversation.client.event.RequestHandler)">mute</a></span>(<a href="../../../../../../com/nexmo/sdk/conversation/client/Member.html">Member</a> member, boolean isMute, <a href="../../../../../../com/nexmo/sdk/conversation/client/event/RequestHandler.html">RequestHandler</a> listener)
-        
-        <div class="jd-descrdiv">Mute/unmute any member in the current audio call.</div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol">
-            
-            
-            
-            
-            
-            void
-        </td>
-        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallManager.html#onAnswer(SessionDescription)">onAnswer</a></span>(SessionDescription sdp)
         
   </td></tr>
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -702,7 +620,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -720,7 +638,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -739,7 +657,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -758,7 +676,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -774,7 +692,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -792,7 +710,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -810,7 +728,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -828,7 +746,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -838,7 +756,7 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallManager.html#onPeerConnectionStatsReady(RTCStatsReport)">onPeerConnectionStatsReady</a></span>(RTCStatsReport report)
+        <span class="sympad"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallManager.html#onPeerConnectionStatsReady(StatsReport[])">onPeerConnectionStatsReady</a></span>(StatsReport[] reports)
         
         <div class="jd-descrdiv">Callback fired once peer connection statistics is ready.</div>
   
@@ -846,7 +764,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -862,7 +780,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -880,7 +798,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -898,7 +816,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1304,7 +1222,7 @@ From interface
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/PeerConnectionClient.PeerConnectionEvents.html#onPeerConnectionStatsReady(RTCStatsReport)">onPeerConnectionStatsReady</a></span>(RTCStatsReport report)
+        <span class="sympad"><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/PeerConnectionClient.PeerConnectionEvents.html#onPeerConnectionStatsReady(StatsReport[])">onPeerConnectionStatsReady</a></span>(StatsReport[] reports)
         
         <div class="jd-descrdiv">Callback fired once peer connection statistics is ready.</div>
   
@@ -1383,43 +1301,6 @@ From interface
 
 
 <!-- Fields -->
-
-
-<!-- ========= FIELD DETAIL ======== -->
-<h2>Fields</h2>
-
-
-
-
-<a id="MANDATORY_PERMISSIONS"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        String[]
-      </span>
-        MANDATORY_PERMISSIONS
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-    </div>
-</div>
-
-
 
 
 <!-- Public ctors -->
@@ -1522,55 +1403,6 @@ From interface
 </div>
 
 
-<a id="earmuff(com.nexmo.sdk.conversation.client.Member, boolean, com.nexmo.sdk.conversation.client.event.RequestHandler)"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">earmuff</span>
-      <span class="normal">(<a href="../../../../../../com/nexmo/sdk/conversation/client/Member.html">Member</a> member, boolean isEarmuff, <a href="../../../../../../com/nexmo/sdk/conversation/client/event/RequestHandler.html">RequestHandler</a> listener)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Earmuff any member in the current audio call.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>member</th>
-          <td>The member to be ear-muffed.</td>
-        </tr>
-        <tr>
-          <th>isEarmuff</th>
-          <td>true or false.</td>
-        </tr>
-        <tr>
-          <th>listener</th>
-          <td>Mandatory completion listener in charge of dispatching the result.
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
 <a id="earmuff(boolean, com.nexmo.sdk.conversation.client.event.RequestHandler)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -1597,10 +1429,6 @@ From interface
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Earmuff self in the current audio call.
-
- <p>This is a convenience method, alternatively <code><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallManager.html#earmuff(com.nexmo.sdk.conversation.client.Member, boolean, com.nexmo.sdk.conversation.client.event.RequestHandler)">earmuff(Member, boolean, RequestHandler)</a></code>
- can be used to earmuff any member of the call.</p>
-
  Audio has to be flowing before by enabling audio
  <code><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallManager.html#enable(com.nexmo.sdk.conversation.client.audio.AudioCallEventListener)">enable(AudioCallEventListener)</a></code> before.</p></div>
   <div class="jd-tagdata">
@@ -1670,52 +1498,6 @@ From interface
  <p>Only one audio conversation is supported at a time, so trying to enable audio simultaneously
  will fail with {@link NexmoAPIError#audioAlreadyInProgress()}</p></li>
       </ul>
-  </div>
-
-    </div>
-</div>
-
-
-<a id="enableCallStats(int, com.nexmo.sdk.conversation.client.audio.AudioCallStatsListener)"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">enableCallStats</span>
-      <span class="normal">(int statCallbackInterval, <a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallStatsListener.html">AudioCallStatsListener</a> listener)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Enable sending call stats to the calling application.
- Note: We recommend a standard callback interval of 1000ms.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>statCallbackInterval</th>
-          <td>Interval for sending stats report <code><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallStatsListener.html#onStatsAvailable(RTCStatsReport)">onStatsAvailable(RTCStatsReport)</a></code>.</td>
-        </tr>
-        <tr>
-          <th>listener</th>
-          <td>Mandatory completion listener in charge of dispatching the result.
-</td>
-        </tr>
-      </table>
   </div>
 
     </div>
@@ -1810,64 +1592,11 @@ From interface
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Mute self in the current audio call.
-
- <p>This is a convenience method, alternatively <code><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallManager.html#mute(com.nexmo.sdk.conversation.client.Member, boolean, com.nexmo.sdk.conversation.client.event.RequestHandler)">mute(Member, boolean, RequestHandler)</a></code>
- can be used to mute/unmute any member of the call.</p>
-
  Audio has to be flowing before muting/un muting, by enabling audio
  <code><a href="../../../../../../com/nexmo/sdk/conversation/client/audio/AudioCallManager.html#enable(com.nexmo.sdk.conversation.client.audio.AudioCallEventListener)">enable(AudioCallEventListener)</a></code> before.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
-        <tr>
-          <th>isMute</th>
-          <td>true or false</td>
-        </tr>
-        <tr>
-          <th>listener</th>
-          <td>Mandatory completion listener in charge of dispatching the result.
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<a id="mute(com.nexmo.sdk.conversation.client.Member, boolean, com.nexmo.sdk.conversation.client.event.RequestHandler)"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">mute</span>
-      <span class="normal">(<a href="../../../../../../com/nexmo/sdk/conversation/client/Member.html">Member</a> member, boolean isMute, <a href="../../../../../../com/nexmo/sdk/conversation/client/event/RequestHandler.html">RequestHandler</a> listener)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Mute/unmute any member in the current audio call.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>member</th>
-          <td>The Member of this call to be muted/unmuted.</td>
-        </tr>
         <tr>
           <th>isMute</th>
           <td>true or false</td>
@@ -2172,7 +1901,7 @@ From interface
 </div>
 
 
-<a id="onPeerConnectionStatsReady(RTCStatsReport)"></a>
+<a id="onPeerConnectionStatsReady(StatsReport[])"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2185,7 +1914,7 @@ From interface
         void
       </span>
       <span class="sympad">onPeerConnectionStatsReady</span>
-      <span class="normal">(RTCStatsReport report)</span>
+      <span class="normal">(StatsReport[] reports)</span>
     </h4>
       <div class="api-level">
         <div>

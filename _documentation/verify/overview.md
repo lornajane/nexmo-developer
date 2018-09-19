@@ -28,16 +28,8 @@ TTS messages are read in the locale that matches the phone number. (For example,
 
 ## Tutorials
 
-```tutorials
-product: verify
-```
-
-
-## Further Reading
-
-* [Verify API implementation guide](https://www.nexmo.com/blog/2018/05/10/nexmo-verify-api-implementation-guide-dr/)
-* [Using the Verify API on iOS](https://www.nexmo.com/blog/2018/05/10/add-two-factor-authentication-to-swift-ios-apps-dr/)
-* [Using the Verify API on Android](https://www.nexmo.com/blog/2018/05/10/add-two-factor-authentication-to-android-apps-with-nexmos-verify-api-dr/)
+* [Two-factor authentication for security and spam prevention](/tutorials/two-factor-authentication)
+* [Passwordless authentication](/tutorials/passwordless-authentication)
 
 ## References
 

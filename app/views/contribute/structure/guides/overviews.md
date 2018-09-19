@@ -1,6 +1,5 @@
 ---
 title: Overviews
-navigation_weight: 1
 ---
 
 # Overviews
@@ -15,20 +14,20 @@ Explain what the product is and with bullet points what you can do with the prod
 
 ## Contents
 
-This should be a bulleted outline of the contents of the current page, each item should be an anchor link to a page heading.
+This should be a bulleted outline the contents of the current page, each item should be an anchor link to a page heading.
 
 ## Concepts
 
-It's important to make sure that the user has a grasp of subjects that are common throughout the product you are documenting. Concepts introduces these in brief and links off to further reading where appropriate. Concepts will usually be described in more detail in the Guides.
+It's important to make sure that the user has a grasp of subjects that are common throughout the product you are documenting. Concepts introduces these in brief and links off to further reading where appropriate.
 
 ## Getting started
 
-This section is designed to prove to the user the product does what it claims to. This could be an interactive demonstration or an opinionated and basic getting started guide.
+This section is designed to prove to the user the product does what it claims to. This could be an interactive demonstration or an opinionated & basic getting started guide.
 
 ## Features
 
-Now that the user has an understanding of what the product does, it's important to tell them what the capabilities of the product are. Also add links to the guides here.
+Now that the user has an understanding of what the product it's important we tell them what are the capabilities of the product and with links off to guides.
 
 ## Further reading
 
-Further reading isn't a section itself but rather contains links off to the product Building Blocks, Guides, API References and Tutorials.
+Further reading isn't a section itself but rather contains links off to the product Building Blocks, Guides, API references & Tutorials.

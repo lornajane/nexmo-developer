@@ -1,6 +1,5 @@
 ---
 title: Introduction to contributing content
-navigation_weight: 1
 ---
 
 # Introduction to contributing content

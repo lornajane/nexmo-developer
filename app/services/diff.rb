@@ -46,8 +46,8 @@ class Diff
           File.open(path, 'w') do |file|
             file.write document.to_html
           end
-        rescue StandardError
-          Rails.logger.error("File failed to generate - #{relative_path}".colorize(:yellow))
+        rescue Exception
+          puts "File failed to generate - #{relative_path}".colorize(:yellow)
           File.open(path, 'w') do |file|
             file.write <<~HEREDOC
               ###############################################################################
@@ -87,21 +87,20 @@ class Diff
 
   def report_cli
     if @output.any?
-      Rails.logger.info("#{@output.size} changes detected".colorize(:light_red))
+      puts "#{@output.size} changes detected".colorize(:light_red)
       @output.reject.each do |result|
-        Rails.logger.info(
-          <<~HEREDOC
-            #{result[:path]}
-             #{result[:diff]}
+        puts <<~HEREDOC
+          #{result[:path]}
+
+          #{result[:diff]}
 
 
-          HEREDOC
-        )
+        HEREDOC
       end
 
-      exit 1 # rubocop:disable Rails/Exit
+      exit 1
     else
-      Rails.logger.info('No changes detected'.colorize(:green))
+      puts 'No changes detected'.colorize(:green)
     end
   end
 
@@ -109,16 +108,16 @@ class Diff
     if @output.any?
       time = Time.new.to_i
       branch = "code-example-update-#{time}"
-      Rails.logger.info("Checking out new branch - #{branch}".colorize(:yellow))
+      puts "Checking out new branch - #{branch}".colorize(:yellow)
       system "git checkout -b #{branch}"
-      Rails.logger.info('Adding repo files'.colorize(:yellow))
+      puts 'Adding repo files'.colorize(:yellow)
       system 'git add .repos'
-      Rails.logger.info('Commiting changes'.colorize(:yellow))
+      puts 'Commiting changes'.colorize(:yellow)
       system "git commit -m 'Automated: Updating code examples'"
-      Rails.logger.info('Pushing'.colorize(:yellow))
+      puts 'Pushing'.colorize(:yellow)
       system "git push git@github.com:Nexmo/nexmo-developer.git #{branch}"
 
-      body = "#{@output.size} changes detected\n\n"
+      body =  "#{@output.size} changes detected\n\n"
       @output.reject.each do |result|
         body << <<~HEREDOC
           - [ ] `#{result[:path]}`
@@ -130,7 +129,7 @@ class Diff
         HEREDOC
       end
 
-      Rails.logger.info("Notifying Nexmo Developer of branch - #{branch}".colorize(:yellow))
+      puts "Notifying Nexmo Developer of branch - #{branch}".colorize(:yellow)
       RestClient.post ENV['OPEN_PULL_REQUEST_ENDPOINT'], {
         'branch' => branch,
         'body' => body,
@@ -140,7 +139,7 @@ class Diff
         accept: :json,
       }
     else
-      Rails.logger.info('No changes detected'.colorize(:green))
+      puts 'No changes detected'.colorize(:green)
     end
   end
 end

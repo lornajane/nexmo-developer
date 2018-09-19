@@ -1,15 +1,15 @@
 require 'dotenv'
 Dotenv.load
 
-NEXMO_API_KEY = ENV['NEXMO_API_KEY']
-NEXMO_API_SECRET = ENV['NEXMO_API_SECRET']
+API_KEY = ENV['API_KEY']
+API_SECRET = ENV['API_SECRET']
 VERIFY_REQUEST_ID = ENV['VERIFY_REQUEST_ID']
 
 require 'nexmo'
 
 client = Nexmo::Client.new(
-  api_key: NEXMO_API_KEY,
-  api_secret: NEXMO_API_SECRET
+  api_key: API_KEY,
+  api_secret: API_SECRET
 )
 
 response = client.verify.search(request_id: VERIFY_REQUEST_ID)

@@ -163,8 +163,6 @@
     <li class="api apilevel-">
   <a href="../../../../../com/nexmo/sdk/conversation/core/networking/package-summary.html">com.nexmo.sdk.conversation.core.networking</a></li>
     <li class="api apilevel-">
-  <a href="../../../../../com/nexmo/sdk/conversation/core/util/package-summary.html">com.nexmo.sdk.conversation.core.util</a></li>
-    <li class="api apilevel-">
   <a href="../../../../../com/nexmo/sdk/conversation/device/package-summary.html">com.nexmo.sdk.conversation.device</a></li>
     <li class="api apilevel-">
   <a href="../../../../../com/nexmo/sdk/conversation/push/package-summary.html">com.nexmo.sdk.conversation.push</a></li>
@@ -200,8 +198,8 @@
               
     <li><h2>Enums</h2>
       <ul>
-          <li class="api apilevel-"><a href="../../../../../com/nexmo/sdk/conversation/client/Call.CALL_STATE.html">Call.CALL_STATE</a></li>
           <li class="api apilevel-"><a href="../../../../../com/nexmo/sdk/conversation/client/Call.MEMBER_CALL_STATE.html">Call.MEMBER_CALL_STATE</a></li>
+          <li class="api apilevel-"><a href="../../../../../com/nexmo/sdk/conversation/client/Call.TYPE.html">Call.TYPE</a></li>
           <li class="api apilevel-"><a href="../../../../../com/nexmo/sdk/conversation/client/Conversation.MEDIA_TYPE.html">Conversation.MEDIA_TYPE</a></li>
           <li class="api apilevel-"><a href="../../../../../com/nexmo/sdk/conversation/client/ImageRepresentation.TYPE.html">ImageRepresentation.TYPE</a></li>
           <li class="api apilevel-"><a href="../../../../../com/nexmo/sdk/conversation/client/Member.STATE.html">Member.STATE</a></li>
@@ -620,7 +618,7 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/nexmo/sdk/conversation/client/ConversationClient.html#callPhone(java.lang.String, com.nexmo.sdk.conversation.client.event.RequestHandler<com.nexmo.sdk.conversation.client.Call>)">callPhone</a></span>(String phoneNumber, <a href="../../../../../com/nexmo/sdk/conversation/client/event/RequestHandler.html">RequestHandler</a>&lt;<a href="../../../../../com/nexmo/sdk/conversation/client/Call.html">Call</a>&gt; callStateListener)
+        <span class="sympad"><a href="../../../../../com/nexmo/sdk/conversation/client/ConversationClient.html#callPhone(java.lang.String, com.nexmo.sdk.conversation.client.event.RequestHandler<com.nexmo.sdk.conversation.client.Call>)">callPhone</a></span>(String phoneNumber, <a href="../../../../../com/nexmo/sdk/conversation/client/event/RequestHandler.html">RequestHandler</a>&lt;<a href="../../../../../com/nexmo/sdk/conversation/client/Call.html">Call</a>&gt; callCreateListener)
         
         <div class="jd-descrdiv">Initiate an outbound call to a specific phone number.</div>
   
@@ -691,24 +689,6 @@ Summary:
             
             
             
-            <a href="../../../../../com/nexmo/sdk/conversation/client/Call.html">Call</a>
-        </td>
-        <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/nexmo/sdk/conversation/client/ConversationClient.html#getCall(java.lang.String)">getCall</a></span>(String cid)
-        
-        <div class="jd-descrdiv">Get call based on conversation unique ID, synchronously.</div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol">
-            
-            
-            
-            
-            
             <a href="../../../../../com/nexmo/sdk/conversation/client/ConversationClient.ConversationClientConfig.html">ConversationClient.ConversationClientConfig</a>
         </td>
         <td class="jd-linkcol" width="100%">
@@ -720,7 +700,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -738,7 +718,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -756,7 +736,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -774,7 +754,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -792,7 +772,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -810,7 +790,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -828,7 +808,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -844,7 +824,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -862,7 +842,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -880,7 +860,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -898,7 +878,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -916,7 +896,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -934,7 +914,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -952,7 +932,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -972,7 +952,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -990,7 +970,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1006,7 +986,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1024,7 +1004,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1042,7 +1022,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1060,7 +1040,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1078,7 +1058,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1096,7 +1076,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1112,7 +1092,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1130,7 +1110,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1149,7 +1129,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1167,7 +1147,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1517,7 +1497,6 @@ From class
      <li>Call name: <code><a href="../../../../../com/nexmo/sdk/conversation/client/Call.html#getName()">getName()</a></code>.</li>
      <li>Member that initiated the call: <code><a href="../../../../../com/nexmo/sdk/conversation/client/Call.html#from()">from()</a></code>.</li>
      <li>All members invited in the call: <code><a href="../../../../../com/nexmo/sdk/conversation/client/Call.html#to()">to()</a></code>.</li>
-     <li>Call state: <code><a href="../../../../../com/nexmo/sdk/conversation/client/Call.html#getCallState()">getCallState()</a></code>, defaults to <code><a href="../../../../../com/nexmo/sdk/conversation/client/Call.CALL_STATE.html#STARTED">STARTED</a></code>.</li>
  </ul>
  </p>
 
@@ -1548,7 +1527,7 @@ From class
         void
       </span>
       <span class="sympad">callPhone</span>
-      <span class="normal">(String phoneNumber, <a href="../../../../../com/nexmo/sdk/conversation/client/event/RequestHandler.html">RequestHandler</a>&lt;<a href="../../../../../com/nexmo/sdk/conversation/client/Call.html">Call</a>&gt; callStateListener)</span>
+      <span class="normal">(String phoneNumber, <a href="../../../../../com/nexmo/sdk/conversation/client/event/RequestHandler.html">RequestHandler</a>&lt;<a href="../../../../../com/nexmo/sdk/conversation/client/Call.html">Call</a>&gt; callCreateListener)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -1560,23 +1539,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Initiate an outbound call to a specific phone number.
-
- <p>Callbacks will be dispatched each time there is a
- <code><a href="../../../../../com/nexmo/sdk/conversation/client/Call.CALL_STATE.html">Call.CALL_STATE</a></code> change.</p>
-
- <p>Order of events:
- <ul>
-     <li> <code><a href="../../../../../com/nexmo/sdk/conversation/client/event/ResultListener.html#onSuccess(T)">onSuccess(Object)</a></code> with <code><a href="../../../../../com/nexmo/sdk/conversation/client/Call.html#getCallState()">getCallState()</a></code> =
-         <code><a href="../../../../../com/nexmo/sdk/conversation/client/Call.CALL_STATE.html#STARTED">STARTED</a></code> when call is initiated,
-         but not yet ringing for the other members. At this point <code><a href="../../../../../com/nexmo/sdk/conversation/client/Call.html#getConversation()">getConversation()</a></code>
-         might be empty.
-     </li>
-     <li> <code><a href="../../../../../com/nexmo/sdk/conversation/client/event/ResultListener.html#onSuccess(T)">onSuccess(Object)</a></code> with <code><a href="../../../../../com/nexmo/sdk/conversation/client/Call.html#getCallState()">getCallState()</a></code> =
-         <code><a href="../../../../../com/nexmo/sdk/conversation/client/Call.CALL_STATE.html#RINGING">RINGING</a></code> when the call is
-         already ringing for the destination member.
-     </li>
- </ul></p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Initiate an outbound call to a specific phone number.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
@@ -1585,7 +1548,7 @@ From class
           <td>The phone number.</td>
         </tr>
         <tr>
-          <th>callStateListener</th>
+          <th>callCreateListener</th>
           <td>The request completion listener.
 </td>
         </tr>
@@ -1741,51 +1704,6 @@ From class
 </div>
 
 
-<a id="getCall(java.lang.String)"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        <a href="../../../../../com/nexmo/sdk/conversation/client/Call.html">Call</a>
-      </span>
-      <span class="sympad">getCall</span>
-      <span class="normal">(String cid)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Get call based on conversation unique ID, synchronously.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>cid</th>
-          <td>The unique conversation ID.</td>
-        </tr>
-      </table>
-  </div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>The call, if any found for that specific id.
-</li></ul>
-  </div>
-
-    </div>
-</div>
-
-
 <a id="getConfig()"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -1898,7 +1816,7 @@ From class
   </div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>The conversation, if any found for that specific id.
+      <ul class="nolist"><li>The conversation, if any.
 </li></ul>
   </div>
 

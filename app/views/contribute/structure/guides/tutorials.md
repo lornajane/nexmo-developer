@@ -1,11 +1,10 @@
 ---
 title: Tutorials
-navigation_weight: 4
 ---
 
 # Tutorials
 
-Tutorials are complete example of how to build something practical. They are step-by-step and self-contained providing all necessary content inline and may combine many different products. They usually cover a single specific use case.
+Tutorials are complete example of how to build something practical. They are step by step and self contained providing all necessary content inline and may combine many different products.
 
 ## Opening
 
@@ -26,7 +25,6 @@ Reflect on:
 
 Point to resources:
 
-* Guides - Guides covering the concepts used in the tutorial.
-* Building Blocks - cover specific bits of code to do single function operations.
+* Guides - Guides covering the actions used in the tutorial.
 * API Reference - Given that the tutorial is opinionated, provide this as a resource to allow the user to see what other options are available to them.
-* Tutorials - Other relevant tutorials.
+* Other relevant tutorials.
