@@ -2,7 +2,7 @@
 
 This repository is the code and content for <https://developer.nexmo.com> including the Nexmo documentation, API reference, SDKs, Tools & Community content.
 
-I have added a test change
+I have added a test change. It is excellent.
 
 ## Contributions
 
